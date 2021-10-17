@@ -1,14 +1,46 @@
-<div class="container">
-    <div class="Home">
-        <ul>
-            <li><a href="#">search username</a></li>
-            <li><a href="#">search repository</a></li>
+<header class="pt-3">
+    <div class="menu row">
+        <a class="nav-item nav-link col-sm" routerLink="/repositories" routerLinkActive='active'>Repos</a>
+        <a class="nav-item nav-link col-sm" routerLink="/profiles" routerLinkActive='active'>profiles</a>
+    </div>
+    <div class="text-center topic mt-5">
+        <P class="searchText git text-center">Github Search</P>
+    </div>
+</header>
+<form class="form-inline" submit="searchUser">
+    <div class="text-center">
+        <input [(ngModel)]="user"  name="user" type="search" class="form-control" placeholder="Search" id="searchArea">
+    </div>
+     
+    <div class="text-center">
+        <input (click)="showUserName()" (click)="showUse()" type="submit" value="search" class="btn btn-secondary btn-sm mt-3" >
+    </div>
+</form>
+<div class="mt-3 avatar mx-auto row">
+    <h5 class="text-center">Profile Details</h5>
+    <div class="image col-md-6 text-center">
+        <p class="text-center">User Image</p>
+        <img src="{{displayUser.avatar_url}}" alt="" class="userImage">
+        <p>{{displayUser.login}}</p>
+    </div>
+    <div class="col-md-2">
+        <p class="text-center">User Details</p>
+        <p>Username: {{displayUser.login}}</p>
+        <p>Date Created: {{displayUser.created_at | date}}</p>
+        <p>Number of Repos: {{displayUser.public_repos}}</p>
+        <p>Following: {{displayUser.following}}</p>
+        <p>Followed by {{displayUser.followers}}</p>
+    </div>
+</div>
+<div class="text-center">
+    <h4>Repositories</h4>
+    <div class="container">
+        <ul class="row">
+            <li *ngFor='let repo of shiwUse' class="col-sm-4 repos">
+                <a href="{{repo.name}}">{{repo.name}}</a>
+                <p>Description:<br>{{repo.description}}</p>
+                <p>Forks: {{repo.forks}}</p>
+            </li>
         </ul>
     </div>
-    <h2>GITHUB</h2>
-    <img src="/src/assets/png-clipart-computer-icons-github-logo-social-media-github-logo-social-media.png">
-    <h1>GITHUB Search</h1>
-    <input type="search" placeholder="username" class="form-control"> 
-    <button type="button" class="btn btn-success">search</button>
-    <button type="button" class="btn btn-secondary">Repositories</button>       
 </div>

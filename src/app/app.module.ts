@@ -4,13 +4,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { GithubRequestService } from './github-http/github-request.service';
 import { Routes } from '@angular/router';
-const routes: Routes = [
-  { path:'**', component:NotFoundComponent},
-  {path :'' ,redirectTo:"/form", pathMatch:"full"},
-]
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,10 +18,12 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
+    GithubRequestService
 
   ],
-  providers: [RouterModule],
+  providers: [GithubRequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
