@@ -2,7 +2,7 @@
 ## About the Author
 Developed by Sir Amos Kimutai on october 15th  2021. 
 ## Description
-This app is about creating a user interface and login page using the github API where users are able to search their github usernames and display all their repositories.it also enables users to switch from one github username to another.
+This app is about creating a user interface and login page using the github API where users are able to search their github usernames and display all their repositories.it also enables users to switch from one github username to another and also shows github profile for a particular developer and the number of followers and ones following.
 ## Setup/Installation Requirements
 Requirements:
     <ol>
@@ -30,7 +30,7 @@ Here's the link to the project's [Live site] ("./https://kimutaiamos.github.io/g
 No bugs have been identified in the project.
 
 ### Contact information
-incase of any concerns about my app,kindly don't hesitate to contact us on mail amos.kimutai@student.moringaschool.com
+incase of any concerns about my app,kindly don't hesitate to contact us on mail amos.kimutai@student.moringaschool.com or telephone +254 743 880558
 
 ### License
 [License](./license)
